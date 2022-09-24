@@ -12,18 +12,18 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffFFF0E9),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
+        child: Column(
+          children: [
+            Expanded(
+              child: Row(
                 children: [
                   if (!isMobile(context)) const SideBar(),
-                  const Expanded(child: MyBody()),
+                  const MyBody(),
                 ],
               ),
-              if (isMobile(context)) const BotomNavigationBar(),
-            ],
-          ),
+            ),
+            if (isMobile(context)) const BotomNavigationBar(),
+          ],
         ),
       ),
     );

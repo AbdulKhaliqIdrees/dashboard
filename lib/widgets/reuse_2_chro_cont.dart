@@ -5,8 +5,6 @@ class ReUse2ChromCont extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Text(text),
-    );
+    return Expanded(child: Text(text));
   }
 }
