@@ -11,6 +11,7 @@ class ChromeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       children: [
         Container(
           decoration: BoxDecoration(

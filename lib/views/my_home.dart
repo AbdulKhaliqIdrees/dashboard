@@ -12,15 +12,14 @@ class MyHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xffFFF0E9),
       body: SafeArea(
-        child: Column(
+        child: ListView(
+          shrinkWrap: true,
           children: [
-            Expanded(
-              child: Row(
-                children: [
-                  if (!isMobile(context)) const SideBar(),
-                  const MyBody(),
-                ],
-              ),
+            Row(
+              children: [
+                if (!isMobile(context)) const SideBar(),
+                Expanded(child: MyBody()),
+              ],
             ),
             if (isMobile(context)) const BotomNavigationBar(),
           ],

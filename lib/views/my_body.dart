@@ -10,30 +10,30 @@ class MyBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.all(16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: Container(
-                constraints: const BoxConstraints(
-                  maxWidth: 700,
-                ),
-                child: Column(
-                  children: [
-                    const MyAppBar(),
-                    SizedBox(height: 12),
-                    CommonContainer(),
-                    SizedBox(height: 12),
-                    isMobile(context) ? MobileBody() : ChromeBody(),
-                  ],
-                ),
+    return Padding(
+      padding: EdgeInsets.all(16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Flexible(
+            child: Container(
+              constraints: const BoxConstraints(
+                maxWidth: 700,
+              ),
+              child: ListView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  const MyAppBar(),
+                  SizedBox(height: 12),
+                  CommonContainer(),
+                  SizedBox(height: 12),
+                  isMobile(context) ? MobileBody() : ChromeBody(),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
